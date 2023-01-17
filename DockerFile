@@ -1,0 +1,11 @@
+FROM amazoncorretto:8
+
+MAINTAINER ashokmurthy
+
+LABEL description="Running xchangerateapp on AWS EC2"
+
+COPY build/libs/xchangerates-1.0-SNAPSHOT.jar xchangerateapp.jar
+
+EXPOSE 8080
+
+ENTRYPOINT ["java", "-jar", "xchangerateapp.jar"]
